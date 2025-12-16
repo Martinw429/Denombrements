@@ -10,6 +10,9 @@ namespace Denombrements
             int choix = 1;
             
             /// Code permettant de faire des calculs de permutation/arrangement/combinaison sur la console.
+            
+            //Branche teste créer pour optimiser le code et tester différente boucle !
+
             while (choix != 0)
             {
                 Console.WriteLine("Permutation ...................... 1");

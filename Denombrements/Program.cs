@@ -19,52 +19,62 @@ namespace Denombrements
                 Console.WriteLine("Quitter .......................... 0");
                 Console.Write("Choix :                            ");
                 choix = int.Parse(Console.ReadLine());
-                switch (choix)
+                if ((choix >= 0) && (choix <= 3))
                 {
-                    case 1:
-                        Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        int nombre = int.Parse(Console.ReadLine()); // saisir le nombre
-                                                                    // calcul de resultat
-                        long resultat = 1;
-                        for (int k = 1; k <= nombre; k++)
-                            resultat *= k;
-                        Console.WriteLine(nombre + "! = " + resultat);
-                        break;
+                    switch (choix)
+                    {
+                        case 1:
+                            Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
+                            int nombre = int.Parse(Console.ReadLine()); // saisir le nombre
+                                                                        // calcul de resultat
+                            long resultat = 1;
+                            for (int k = 1; k <= nombre; k++)
+                                resultat *= k;
+                            Console.WriteLine(nombre + "! = " + resultat);
+                            break;
 
-                    case 2:
-                        Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        nombre = int.Parse(Console.ReadLine()); // saisir le nombre
+                        case 2:
+                            Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
+                            int total = int.Parse(Console.ReadLine()); // saisir le nombre
+                            Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
+                            nombre = int.Parse(Console.ReadLine()); // saisir le nombre
 
-                        int total = int.Parse(Console.ReadLine()); // saisir le nombre
-                        Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
+                            // calcul de resultat
+                            long resultatArrangement = 1;
+                            for (int k = (total - nombre + 1); k <= total; k++)
+                                resultatArrangement *= k;
+                            //Console.WriteLine("résultat = " + (r1 / r2));
+                            Console.WriteLine("A(" + total + "/" + nombre + ") = " + resultatArrangement);
+                            break;
+                        case 3:
+                            Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
+                            int total3 = int.Parse(Console.ReadLine()); // saisir le nombre
+                            Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
+                            nombre = int.Parse(Console.ReadLine()); // saisir le nombre                                                             // calcul de r1
+                            long resultat1 = 1;
+                            for (int k = (total3 - nombre + 1); k <= total3; k++)
+                                resultat1 *= k;
+                            // calcul de resultat2
+                            long resultat2 = 1;
+                            for (int k = 1; k <= nombre; k++)
+                                resultat2 *= k;
+                            // calcul de r3
+                            //Console.WriteLine("résultat = " + (r1 / r2));
+                            Console.WriteLine("C(" + total3 + "/" + nombre + ") = " + (resultat1 / resultat2));
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            Console.WriteLine("Veuillez saisir un entier entre 0 et 3");
+                            break;
+                    }
 
-                                                                                    // calcul de resultat
-                        for (int k = (total - nombre + 1); k <= total; k++)
-                           resultat *= k;
-                        //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("A(" + total + "/" + nombre + ") = " + resultat);
-                        break;
-                    case 3:
-                        Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        nombre = int.Parse(Console.ReadLine()); // saisir le nombre
-                        int total = int.Parse(Console.ReadLine()); // saisir le nombre
-                        Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
-                                                                    // calcul de r1
-                        long r1 = 1;
-                        for (int k = (total - nombre + 1); k <= total; k++)
-                            r1 *= k;
-                        // calcul de r2
-                        long r2 = 1;
-                        for (int k = 1; k <= nombre; k++)
-                            r2 *= k;
-                        // calcul de r3
-                        //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("C(" + total + "/" + nombre + ") = " + (r1 / r2));
-                        break;
-                    default:
-                        Console.WriteLine("Veuillez saisir un entier");
-                        break;
                 }
+                else
+                {
+                    Console.WriteLine("Veuillez saisir un entier entre 0 et 3");
+                }
+
 
             } while (choix != 0);
             Console.ReadLine();

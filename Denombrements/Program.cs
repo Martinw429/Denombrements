@@ -24,32 +24,34 @@ namespace Denombrements
                     case 1:
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
                         int nombre = int.Parse(Console.ReadLine()); // saisir le nombre
-                                                                    // calcul de r
-                        long r = 1;
+                                                                    // calcul de resultat
+                        long resultat = 1;
                         for (int k = 1; k <= nombre; k++)
-                            r *= k;
-                        Console.WriteLine(nombre + "! = " + r);
+                            resultat *= k;
+                        Console.WriteLine(nombre + "! = " + resultat);
                         break;
+
                     case 2:
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        int t = int.Parse(Console.ReadLine()); // saisir le nombre
+                        nombre = int.Parse(Console.ReadLine()); // saisir le nombre
+
+                        int total = int.Parse(Console.ReadLine()); // saisir le nombre
                         Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
-                        int nombre = int.Parse(Console.ReadLine()); // saisir le nombre
-                                                                    // calcul de r
-                        long r = 1;
-                        for (int k = (t - nombre + 1); k <= t; k++)
-                            r *= k;
+
+                                                                                    // calcul de resultat
+                        for (int k = (total - nombre + 1); k <= total; k++)
+                           resultat *= k;
                         //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("A(" + t + "/" + nombre + ") = " + r);
+                        Console.WriteLine("A(" + total + "/" + nombre + ") = " + resultat);
                         break;
                     case 3:
                         Console.Write("nombre total d'éléments à gérer = "); // le nombre d'éléments à gérer
-                        int t = int.Parse(Console.ReadLine()); // saisir le nombre
+                        nombre = int.Parse(Console.ReadLine()); // saisir le nombre
+                        int total = int.Parse(Console.ReadLine()); // saisir le nombre
                         Console.Write("nombre d'éléments dans le sous ensemble = "); // le sous ensemble
-                        int nombre = int.Parse(Console.ReadLine()); // saisir le nombre
                                                                     // calcul de r1
                         long r1 = 1;
-                        for (int k = (t - nombre + 1); k <= t; k++)
+                        for (int k = (total - nombre + 1); k <= total; k++)
                             r1 *= k;
                         // calcul de r2
                         long r2 = 1;
@@ -57,7 +59,7 @@ namespace Denombrements
                             r2 *= k;
                         // calcul de r3
                         //Console.WriteLine("résultat = " + (r1 / r2));
-                        Console.WriteLine("C(" + t + "/" + nombre + ") = " + (r1 / r2));
+                        Console.WriteLine("C(" + total + "/" + nombre + ") = " + (r1 / r2));
                         break;
                     default:
                         Console.WriteLine("Veuillez saisir un entier");
